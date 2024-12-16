@@ -1,12 +1,12 @@
 # АНАЛИЗ ДАННЫХ И ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ [in GameDev]
-Отчет по лабораторной работе #1 выполнил(а):
-- Иванова Ивана Варкравтовна
-- РИ000024
+Отчет по лабораторной работе #4 выполнил:
+- Фризен Николай Васильевич
+- РИ231113
 Отметка о выполнении заданий (заполняется студентом):
 
 | Задание | Выполнение | Баллы |
 | ------ | ------ | ------ |
-| Задание 1 | # | 60 |
+| Задание 1 | * | 60 |
 | Задание 2 | # | 20 |
 | Задание 3 | # | 20 |
 
@@ -17,123 +17,43 @@
 - к.э.н., доцент Панов М.А.
 - ст. преп., Фадеев В.О.
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
-
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
-
-Структура отчета
-
-- Данные о работе: название работы, фио, группа, выполненные задания.
-- Цель работы.
-- Задание 1.
-- Код реализации выполнения задания. Визуализация результатов выполнения (если применимо).
-- Задание 2.
-- Код реализации выполнения задания. Визуализация результатов выполнения (если применимо).
-- Задание 3.
-- Код реализации выполнения задания. Визуализация результатов выполнения (если применимо).
-- Выводы.
-- ✨Magic ✨
 
 ## Цель работы
-Ознакомиться с основными операторами зыка Python на примере реализации линейной регрессии.
+Ознакомиться с процессом реализации способного производить вычисления перцептрона в проекте Unity.
 
 ## Задание 1
-### Пошагово выполнить каждый пункт раздела "ход работы" с описанием и примерами реализации задач
-Ход работы:
-- Произвести подготовку данных для работы с алгоритмом линейной регрессии. 10 видов данных были установлены случайным образом, и данные находились в линейной зависимости. Данные преобразуются в формат массива, чтобы их можно было вычислить напрямую при использовании умножения и сложения.
-
-```py
-
-In [ ]:
-#Import the required modules, numpy for calculation, and Matplotlib for drawing
-import numpy as np
-import matplotlib.pyplot as plt
-#This code is for jupyter Notebook only
-%matplotlib inline
-
-# define data, and change list to array
-x = [3,21,22,34,54,34,55,67,89,99]
-x = np.array(x)
-y = [2,22,24,65,79,82,55,130,150,199]
-y = np.array(y)
-
-#Show the effect of a scatter plot
-plt.scatter(x,y)
-
-```
-
-- Определите связанные функции. Функция модели: определяет модель линейной регрессии wx+b. Функция потерь: функция потерь среднеквадратичной ошибки. Функция оптимизации: метод градиентного спуска для нахождения частных производных w и b.
-
-
-## Задание 2
-### Должна ли величина loss стремиться к нулю при изменении исходных данных? Ответьте на вопрос, приведите пример выполнения кода, который подтверждает ваш ответ.
-
-- Перечисленные в этом туториале действия могут быть выполнены запуском на исполнение скрипт-файла, доступного [в репозитории](https://github.com/Den1sovDm1triy/hfss-scripting/blob/main/ScreatingSphereInAEDT.py).
-- Для запуска скрипт-файла откройте Ansys Electronics Desktop. Перейдите во вкладку [Automation] - [Run Script] - [Выберите файл с именем ScreatingSphereInAEDT.py из репозитория].
-
-```py
-
-import ScriptEnv
-ScriptEnv.Initialize("Ansoft.ElectronicsDesktop")
-oDesktop.RestoreWindow()
-oProject = oDesktop.NewProject()
-oProject.Rename("C:/Users/denisov.dv/Documents/Ansoft/SphereDIffraction.aedt", True)
-oProject.InsertDesign("HFSS", "HFSSDesign1", "HFSS Terminal Network", "")
-oDesign = oProject.SetActiveDesign("HFSSDesign1")
-oEditor = oDesign.SetActiveEditor("3D Modeler")
-oEditor.CreateSphere(
-	[
-		"NAME:SphereParameters",
-		"XCenter:="		, "0mm",
-		"YCenter:="		, "0mm",
-		"ZCenter:="		, "0mm",
-		"Radius:="		, "1.0770329614269mm"
-	], 
-)
-
-```
-
-## Задание 3
-### Какова роль параметра Lr? Ответьте на вопрос, приведите пример выполнения кода, который подтверждает ваш ответ. В качестве эксперимента можете изменить значение параметра.
-
-- Перечисленные в этом туториале действия могут быть выполнены запуском на исполнение скрипт-файла, доступного [в репозитории](https://github.com/Den1sovDm1triy/hfss-scripting/blob/main/ScreatingSphereInAEDT.py).
-- Для запуска скрипт-файла откройте Ansys Electronics Desktop. Перейдите во вкладку [Automation] - [Run Script] - [Выберите файл с именем ScreatingSphereInAEDT.py из репозитория].
-
-```py
-
-import ScriptEnv
-ScriptEnv.Initialize("Ansoft.ElectronicsDesktop")
-oDesktop.RestoreWindow()
-oProject = oDesktop.NewProject()
-oProject.Rename("C:/Users/denisov.dv/Documents/Ansoft/SphereDIffraction.aedt", True)
-oProject.InsertDesign("HFSS", "HFSSDesign1", "HFSS Terminal Network", "")
-oDesign = oProject.SetActiveDesign("HFSSDesign1")
-oEditor = oDesign.SetActiveEditor("3D Modeler")
-oEditor.CreateSphere(
-	[
-		"NAME:SphereParameters",
-		"XCenter:="		, "0mm",
-		"YCenter:="		, "0mm",
-		"ZCenter:="		, "0mm",
-		"Radius:="		, "1.0770329614269mm"
-	], 
-)
-
-```
+###  проекте Unity реализовать перцептрон, который умеет производить вычисления:
+### OR | дать комментарии о корректности работы
+### AND | дать комментарии о корректности работы
+### NAND | дать комментарии о корректности работы
+### XOR | дать комментарии о корректности работы
+1. OR
+При Train(1) значение Total Error было равно 2. При Train(3) значение Total Error иногда становилось равно 0, но не всегда. Гарантировано точно производить вычисления перцептрон смог только при Train(4), то есть 4 эпох оказалось достаточно для освоения операции OR. Была проведена проверка, все значения оказались верны (скриншоты ниже).
+При Train(1):
+![image](https://github.com/user-attachments/assets/d779c22e-4b5f-4f10-94a6-719314e2ff49)
+При Train(4):
+![image](https://github.com/user-attachments/assets/374f9ffa-7c7b-4c90-bdda-fb9a6e6cb646)
+2. AND
+При Train(1) значение Total Error было равно 2. При Train(4) и последующих до 7, значение Total Error иногда становилось равно 0, но не всегда. Гарантировано точно производить вычисления перцептрон смог только при Train(7), то есть 7 эпох оказалось достаточно для освоения операции AND, а значит она оказалась сложнее в освоении, чем OR. Была проведена проверка, все значения оказались верны (скриншоты ниже).
+При Train(1):
+![image](https://github.com/user-attachments/assets/87d9a335-2d21-4ff1-bda9-a6ce9df17a75)
+При Train(7):
+![image](https://github.com/user-attachments/assets/0d01617a-623c-4560-8b4e-03189ec8be66)
+3. NAND
+При Train(1) значение Total Error было равно 2. При Train(6) значение Total Error иногда становилось равно 0, но не всегда. Гарантировано точно производить вычисления перцептрон смог только при Train(7), то есть 7 эпох оказалось достаточно для освоения операции NAND. Была проведена проверка, все значения оказались верны (скриншоты ниже).
+При Train(1):
+![image](https://github.com/user-attachments/assets/6ec9b379-9b3d-4316-ab35-961eadfc9afe)
+При Train(7):
+![image](https://github.com/user-attachments/assets/0d01617a-623c-4560-8b4e-03189ec8be66)
+4. XOR
+При Train(1) значение Total Error было равно 2. При последующем увеличении количества эпох, значение Total Error только росло, пока не дошло до 4. Как и ожидалось, перцептрон не смог освоить операцию XOR.
+При Train(1):
+![image](https://github.com/user-attachments/assets/19d6d082-648e-432a-91eb-3e8249804db2)
+При Train(20):
+![image](https://github.com/user-attachments/assets/f2fa957b-b2d8-48ae-82a3-a2130141918e)
 
 ## Выводы
 
-Абзац умных слов о том, что было сделано и что было узнано.
+В данной лабораторной работе был изучен процесс реализации перцептрона в Unity, проведены тесты его возможности работать с логическими операциями OR, AND, NAND и XOR. Подводя итог, самой лёгкой для освоения операцией оказалась OR, AND и NAND оказались примерно равны по сложности и XOR так и не был освоен, потому что это не линейно разделимая задача.
 
-| Plugin | README |
-| ------ | ------ |
-| Dropbox | [plugins/dropbox/README.md][PlDb] |
-| GitHub | [plugins/github/README.md][PlGh] |
-| Google Drive | [plugins/googledrive/README.md][PlGd] |
-| OneDrive | [plugins/onedrive/README.md][PlOd] |
-| Medium | [plugins/medium/README.md][PlMe] |
-| Google Analytics | [plugins/googleanalytics/README.md][PlGa] |
 
-## Powered by
-
-**BigDigital Team: Denisov | Fadeev | Panov**
